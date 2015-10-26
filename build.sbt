@@ -18,7 +18,8 @@ libraryDependencies ++= Seq(
   "org.apache.hadoop"     % "hadoop-client"  % "2.6.0-cdh5.4.7" % "provided" excludeAll ExclusionRule(organization = "javax.servlet"),
   "org.apache.spark"     %% "spark-core"     % "1.5.1" % "provided" excludeAll ExclusionRule(organization = "org.apache.hadoop"),
   "org.apache.spark"     %% "spark-sql"      % "1.5.1" % "provided" excludeAll ExclusionRule(organization = "org.apache.hadoop"),
-  "org.apache.spark"     %% "spark-catalyst" % "1.5.1" % "provided" excludeAll ExclusionRule(organization = "org.apache.hadoop")
+  "org.apache.spark"     %% "spark-catalyst" % "1.5.1" % "provided" excludeAll ExclusionRule(organization = "org.apache.hadoop"),
+  "org.apache.spark"     %% "spark-hive"     % "1.5.1" % "provided" excludeAll ExclusionRule(organization = "org.apache.hadoop")
 )
 
 libraryDependencies ++= Seq(

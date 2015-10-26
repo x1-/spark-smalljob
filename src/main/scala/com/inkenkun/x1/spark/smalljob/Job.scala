@@ -2,9 +2,10 @@ package com.inkenkun.x1.spark.smalljob
 
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.SparkContext
-import org.apache.spark.sql.{SaveMode, SQLContext}
+import org.apache.spark.sql.SaveMode
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.hive.HiveContext
 
 object Job {
 
@@ -23,7 +24,7 @@ object Job {
     val output = args(1)
 
     val sc = new SparkContext( sparkConfig )
-    implicit val sqlContext = new SQLContext( sc )
+    implicit val sqlContext = new HiveContext( sc )
     import sqlContext.implicits._
 
     val df = sqlContext.read.format( "com.databricks.spark.csv" ).option( "header", "true" ).load( input )
